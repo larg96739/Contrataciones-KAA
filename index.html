@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Formulario para arquitectos interesados en unirse a nuestra firma de diseño de paisaje" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Únete a nuestro equipo de diseño de paisaje</title>
+  <!-- Fuente de Google Fonts (ejemplo) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Sección Hero / Encabezado con imagen de fondo -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Únete a nuestro equipo</h1>
+      <p>Estamos buscando arquitectos con pasión por el diseño de paisaje.</p>
+      <button id="startFormBtn" class="btn-start">Iniciar Solicitud</button>
+    </div>
+  </header>
+
+  <!-- Contenedor principal para el formulario multistep -->
+  <main class="form-container" id="formContainer">
+    <form class="multi-step-form" id="multiStepForm">
+      
+      <!-- Paso 1: Datos Personales -->
+      <div class="form-step active">
+        <h2>Datos Personales</h2>
+        <p>Por favor, completa tu información de contacto.</p>
+        
+        <label for="nombre">Nombre Completo *</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required />
+
+        <label for="correo">Correo Electrónico *</label>
+        <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required />
+
+        <label for="telefono">Número de Teléfono *</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu número de teléfono" required />
+
+        <div class="btns-group">
+          <button type="button" class="btn-next">Siguiente</button>
+        </div>
+      </div>
+
+      <!-- Paso 2: Experiencia Profesional -->
+      <div class="form-step">
+        <h2>Experiencia Profesional</h2>
+        <p>Cuéntanos un poco sobre tu experiencia y tus habilidades.</p>
+
+        <label for="experiencia">Años de Experiencia *</label>
+        <input type="number" id="experiencia" name="experiencia" placeholder="Ej. 3" min="0" required />
+
+        <label for="especializacion">Especialización *</label>
+        <select id="especializacion" name="especializacion" required>
+          <option value="" disabled selected>Selecciona tu especialización</option>
+          <option value="Residencial">Residencial</option>
+          <option value="Comercial">Comercial</option>
+          <option value="Cívico">Cívico</option>
+          <option value="Otro">Otro</option>
+        </select>
+
+        <label>Software que dominas (selección múltiple) *</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="software[]" value="SketchUp" /> SketchUp</label>
+          <label><input type="checkbox" name="software[]" value="AutoCAD" /> AutoCAD</label>
+          <label><input type="checkbox" name="software[]" value="Lumion" /> Lumion</label>
+          <label><input type="checkbox" name="software[]" value="Revit" /> Revit</label>
+          <label><input type="checkbox" name="software[]" value="Corona Renderer" /> Corona Renderer</label>
+          <label><input type="checkbox" name="software[]" value="Vectorworks" /> Vectorworks</label>
+          <label><input type="checkbox" name="software[]" value="Land F/X" /> Land F/X</label>
+          <label><input type="checkbox" name="software[]" value="ArcGIS" /> ArcGIS</label>
+          <label><input type="checkbox" name="software[]" value="Rhino 3D" /> Rhino 3D</label>
+        </div>
+
+        <div class="btns-group">
+          <button type="button" class="btn-prev">Anterior</button>
+          <button type="button" class="btn-next">Siguiente</button>
+        </div>
+      </div>
+
+      <!-- Paso 3: Motivación y Valores -->
+      <div class="form-step">
+        <h2>Motivación y Valores</h2>
+        <p>¿Qué te motiva a trabajar en diseño de paisaje y qué esperas de nuestra firma?</p>
+        
+        <label for="motivacion">Tu respuesta *</label>
+        <textarea id="motivacion" name="motivacion" rows="4" placeholder="Comparte tu motivación y expectativas" required></textarea>
+
+        <div class="btns-group">
+          <button type="button" class="btn-prev">Anterior</button>
+          <button type="button" class="btn-next">Siguiente</button>
+        </div>
+      </div>
+
+      <!-- Paso 4: Referencias Laborales -->
+      <div class="form-step">
+        <h2>Referencias Laborales</h2>
+        <p>Proporciona nombres y contactos de referencias.</p>
+
+        <label for="referencias">Tus referencias *</label>
+        <textarea id="referencias" name="referencias" rows="3" placeholder="Nombres y formas de contacto" required></textarea>
+
+        <div class="btns-group">
+          <button type="button" class="btn-prev">Anterior</button>
+          <button type="button" class="btn-next">Siguiente</button>
+        </div>
+      </div>
+
+      <!-- Paso 5: Comentarios opcionales -->
+      <div class="form-step">
+        <h2>Comentarios o Preguntas</h2>
+        <p>¿Te gustaría agregar algo más?</p>
+
+        <label for="comentarios">Comentarios (opcional)</label>
+        <textarea id="comentarios" name="comentarios" rows="3" placeholder="¿Alguna duda adicional?"></textarea>
+
+        <div class="btns-group">
+          <button type="button" class="btn-prev">Anterior</button>
+          <button type="submit" class="btn-submit">Enviar</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <p>&copy; 2025 Tu Firma de Diseño de Paisaje. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Script JavaScript para el formulario multistep -->
+  <script src="script.js"></script>
+</body>
+</html>

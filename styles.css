@@ -1,0 +1,227 @@
+/* Estilos básicos y de reinicio */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Hero / Encabezado con fondo */
+.hero {
+  background: url('https://via.placeholder.com/1600x800') no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+/* Sombra oscura sobre la imagen para contraste */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  color: #fff;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 1em;
+}
+
+.btn-start {
+  background-color: #ffce00;
+  color: #333;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75em 2em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-start:hover {
+  background-color: #e0b700;
+}
+
+/* Contenedor principal del formulario */
+.form-container {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 1em;
+  display: none; /* Oculto hasta que se presione el botón "Iniciar Solicitud" */
+}
+
+/* Formulario multistep */
+.multi-step-form {
+  background-color: #fff;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* Cada "paso" del formulario */
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+/* Título del paso */
+.form-step h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+  color: #444;
+}
+
+/* Descripción del paso */
+.form-step p {
+  font-size: 1rem;
+  margin-bottom: 1.5em;
+  color: #666;
+}
+
+/* Elementos de formulario */
+label {
+  display: block;
+  margin-bottom: 0.3em;
+  font-weight: 600;
+  color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.75em;
+  margin-bottom: 1.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3ca371; /* color de acento */
+}
+
+/* Checkboxes en grupo */
+.checkbox-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.checkbox-group input {
+  margin-right: 0.5em;
+}
+
+/* Botones de navegación */
+.btns-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.btn-prev, .btn-next, .btn-submit {
+  background-color: #3ca371;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.7em 1.5em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-prev:hover,
+.btn-next:hover,
+.btn-submit:hover {
+  background-color: #2e7b54;
+}
+
+/* Paso final - botón de envío */
+.btn-submit {
+  background-color: #ff7f50; /* Color llamativo */
+}
+
+.btn-submit:hover {
+  background-color: #e06938;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #aaa;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  .btns-group {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  .checkbox-group {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,34 +1,29 @@
-document.addEventListener("DOMContentLoaded", () => {
+ddocument.addEventListener("DOMContentLoaded", () => {
   const formContainer = document.getElementById("formContainer");
   const startFormBtn = document.getElementById("startFormBtn");
-  
-  // Mostrar el formulario al hacer clic en "Iniciar Solicitud"
-  if (startFormBtn) {
-    startFormBtn.addEventListener("click", () => {
-      formContainer.style.display = "block";
-      // Scroll suave hasta el formulario
-      formContainer.scrollIntoView({ behavior: "smooth" });
-    });
-  }
-
   const form = document.getElementById("multiStepForm");
   const formSteps = Array.from(document.querySelectorAll(".form-step"));
   const btnNextList = Array.from(document.querySelectorAll(".btn-next"));
   const btnPrevList = Array.from(document.querySelectorAll(".btn-prev"));
-
   let currentStep = 0;
+
+  // Mostrar formulario al hacer clic en "Iniciar Solicitud"
+  if (startFormBtn) {
+    startFormBtn.addEventListener("click", () => {
+      formContainer.style.display = "block";
+      formContainer.scrollIntoView({ behavior: "smooth" });
+    });
+  }
 
   // Función para mostrar el paso actual
   function showFormStep(index) {
     formSteps.forEach((step, idx) => {
       step.classList.remove("active");
-      if (idx === index) {
-        step.classList.add("active");
-      }
+      if (idx === index) step.classList.add("active");
     });
   }
 
-  // Inicializar el primer paso
+  // Inicializar primer paso
   showFormStep(currentStep);
 
   // Botones "Siguiente"
@@ -51,15 +46,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Al enviar el formulario (último paso)
+  // ========== CORRECCIÓN PRINCIPAL ========== //
+  // Manejar envío del formulario
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    // Aquí podrías implementar la lógica de envío a un servidor o una alerta de confirmación
-    alert("¡Gracias por completar tu solicitud! Nos pondremos en contacto pronto.");
-    form.reset();
-    // Reiniciar el formulario al primer paso
-    currentStep = 0;
-    showFormStep(currentStep);
-    formContainer.scrollIntoView({ behavior: "smooth" });
+
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        currentStep = 0;             // Reiniciar pasos
+        showFormStep(currentStep);  // Mostrar primer paso
+        form.reset();               // Limpiar campos
+        formContainer.scrollIntoView({ behavior: "smooth" });
+        alert("¡Formulario enviado con éxito!");
+      }
+    })
+    .catch((error) => {
+      alert("Error al enviar. Inténtalo de nuevo.");
+    });
   });
 });

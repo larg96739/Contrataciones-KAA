@@ -1,4 +1,4 @@
-ddocument.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const formContainer = document.getElementById("formContainer");
   const startFormBtn = document.getElementById("startFormBtn");
   const form = document.getElementById("multiStepForm");

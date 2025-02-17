@@ -26,10 +26,20 @@
 
   <!-- Contenedor principal para el formulario multistep -->
   <main class="form-container" id="formContainer">
-    <form class="multi-step-form" id="multiStepForm" action="https://formspree.io/f/myzkdzdg" method="POST">
+    <form class="multi-step-form" id="multiStepForm" action=https://getform.io/f/bmdkdlpa method="POST" enctype="multipart/form-data">
+
+	<!-- Paso 0: Introducción -->
+	<div class="form-step active">
+  	<div class="intro-step">
+	    <h2>¿Quiénes Somos?</h2>
+	    <p>Somos una firma galardonada de arquitectura paisajista con más de 40 años de experiencia, sirviendo con orgullo al norte de California, EE.UU. Nos especializamos en la creación de jardines californianos auténticos, ofreciendo servicios integrales de diseño de paisajes para proyectos residenciales, cívicos y comerciales. Nuestra reputación se basa en nuestra capacidad para responder a las necesidades únicas de cada cliente, diseñando paisajes innovadores y conscientes del medio ambiente que perduran en el tiempo.</p>
+    <p>Además, destacamos en el diseño de paisajes sostenibles con plantas nativas de California, atrayendo aves, abejas y mariposas locales, y contribuyendo así a fortalecer el ecosistema de polinizadores de la región.</p>
+	    <button type="button" class="btn-next btn-start">Comenzar Solicitud</button>
+	  </div>
+	</div>
       
       <!-- Paso 1: Datos Personales -->
-      <div class="form-step active">
+      <div class="form-step">
         <h2>Datos Personales</h2>
         <p>Por favor, completa tu información de contacto.</p>
         
@@ -76,6 +86,8 @@
           <label><input type="checkbox" name="software" value="ArcGIS" /> ArcGIS</label>
           <label><input type="checkbox" name="software" value="Rhino 3D" /> Rhino 3D</label>
         </div>
+	<label for="cv">Sube tu CV (PDF o DOCX) *</label>
+	<input type="file" id="cv" name="cv" accept=".pdf,.docx" required />
 
         <div class="btns-group">
           <button type="button" class="btn-prev">Anterior</button>
@@ -103,7 +115,7 @@
         <p>Proporciona nombres y contactos de referencias.</p>
 
         <label for="referencias">Tus referencias *</label>
-        <textarea id="referencias" name="referencias" rows="3" placeholder="Nombres y formas de contacto" required></textarea>
+        <textarea id="referencias" name="referencias" rows="3" placeholder="Agrega al menos dos referencias (Nombre y Teléfono)" required></textarea>
 
         <div class="btns-group">
           <button type="button" class="btn-prev">Anterior</button>

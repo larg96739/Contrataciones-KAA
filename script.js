@@ -2,18 +2,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const formContainer = document.getElementById("formContainer");
   const startFormBtn = document.getElementById("startFormBtn");
   const form = document.getElementById("multiStepForm");
-  const formSteps = Array.from(document.querySelectorAll(".form-step"));
   const btnNextList = Array.from(document.querySelectorAll(".btn-next"));
   const btnPrevList = Array.from(document.querySelectorAll(".btn-prev"));
   let currentStep = 0;
 
-  // Mostrar formulario al hacer clic en "Iniciar Solicitud"
-  if (startFormBtn) {
-    startFormBtn.addEventListener("click", () => {
-      formContainer.style.display = "block";
-      formContainer.scrollIntoView({ behavior: "smooth" });
-    });
-  }
+ 
+// Modificar evento click del botón inicial
+if (startFormBtn) {
+  startFormBtn.addEventListener("click", () => {
+    formContainer.style.display = "block";
+    startFormBtn.style.display = "none";
+    // Mostrar solo el paso de introducción
+    showFormStep(0);
+    formSteps.forEach(step => step.classList.remove("active"));
+    document.querySelector(".form-step").classList.add("active");
+  });
+}
+
+// Actualizar total de pasos
+const formSteps = Array.from(document.querySelectorAll(".form-step"));
 
   // Función para mostrar el paso actual
   function showFormStep(index) {
@@ -26,15 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Inicializar primer paso
   showFormStep(currentStep);
 
-  // Botones "Siguiente"
-  btnNextList.forEach((btn) => {
-    btn.addEventListener("click", () => {
+// Modificar en script.js
+btnNextList.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (validateStep(currentStep)) {
       if (currentStep < formSteps.length - 1) {
         currentStep++;
         showFormStep(currentStep);
       }
-    });
+    }
   });
+});
 
   // Botones "Anterior"
   btnPrevList.forEach((btn) => {
@@ -45,6 +54,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+// Añadir al script.js
+function validateStep(stepIndex) {
+  const currentStep = formSteps[stepIndex];
+  const inputs = currentStep.querySelectorAll("input, textarea, select");
+  let isValid = true;
+
+  inputs.forEach(input => {
+    if (input.hasAttribute("required") && !input.value.trim()) {
+      isValid = false;
+      input.style.borderColor = "#ff4444";
+    } else {
+      input.style.borderColor = "#ccc";
+    }
+  });
+
+  return isValid;
+}
 
   // ========== CORRECCIÓN PRINCIPAL ========== //
   // Manejar envío del formulario

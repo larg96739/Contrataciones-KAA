@@ -23,6 +23,18 @@ body {
   position: relative;
 }
 
+/* Background image (Garden.jpeg) */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  object-fit: cover; /* Ensures the image fills the space properly */
+  z-index: 1; /* Keeps it behind the text and logo */
+  opacity: 0.8; /* Adjust opacity for better text readability */
+}
+
 /* Logo en el encabezado */
 .logo-header {
   position: absolute;
@@ -45,6 +57,7 @@ body {
   color: #fff;
   z-index: 2;
   max-width: 600px;
+  text-align: center;
 }
 
 .hero-content h1 {

@@ -23,6 +23,15 @@ body {
   position: relative;
 }
 
+/* Logo en el encabezado */
+.logo-header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  max-width: 250px; /* Ajusta según el tamaño de tu logo */
+  z-index: 3; /* Para que esté sobre la sombra del hero */
+}
+
 /* Sombra oscura sobre la imagen para contraste */
 .hero::after {
   content: "";

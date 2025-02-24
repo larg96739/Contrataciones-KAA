@@ -1,82 +1,80 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Formulario para arquitectos interesados en unirse a nuestra firma de diseño de paisaje" />
+  <meta name="description" content="Form for architects interested in joining our landscape design firm" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Únete a nuestro equipo de diseño de paisaje</title>
-  <!-- Fuente de Google Fonts (ejemplo) -->
+  <title>Join Our Landscape Design Team</title>
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
-  <!-- Hoja de estilos principal -->
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Sección Hero / Encabezado con imagen de fondo -->
+  <!-- Hero Section / Header with Background Image -->
   <header class="hero">
-  <!-- Background Image -->
-  <img src="garden.jpeg" alt="Garden Background" class="hero-background" />
-  <!-- Logo de la empresa -->
-  <img src="KAA logo.jpeg" alt="Logo KAA" class="logo-header" />
-  <div class="hero-content">
-    <h1>Únete a "Karen Aitken & Associates"</h1>
-    <p>Estamos buscando arquitectos con pasión por el diseño de paisaje.</p>
-    <button id="startFormBtn" class="btn-start">Iniciar Solicitud</button>
-  </div>
-</header>
+    <img src="garden.jpeg" alt="Garden Background" class="hero-background" />
+    <img src="KAA logo.jpeg" alt="KAA Logo" class="logo-header" />
+    <div class="hero-content">
+      <h1>Join Our Team at Karen Aitken & Associates</h1>
+      <p>We are looking for architects passionate about landscape design.</p>
+      <button id="startFormBtn" class="btn-start">I’m Interested!</button>
+    </div>
+  </header>
 
-  <!-- Contenedor principal para el formulario multistep -->
+  <!-- Main Container for Multi-step Form -->
   <main class="form-container" id="formContainer">
-    <form class="multi-step-form" id="multiStepForm" action=https://getform.io/f/bmdkdlpa method="POST" enctype="multipart/form-data">
+    <form class="multi-step-form" id="multiStepForm" action="https://getform.io/f/bmdkdlpa" method="POST" enctype="multipart/form-data">
 
-	<!-- Paso 0: Introducción -->
-	<div class="form-step active">
-  	<div class="intro-step">
-	    <h2>¿Quiénes Somos?</h2>
-	    <p>Somos una firma galardonada de arquitectura paisajista con más de 40 años de experiencia, sirviendo con orgullo al norte de California, EE.UU. Nos especializamos en la creación de jardines californianos auténticos, ofreciendo servicios integrales de diseño de paisajes para proyectos residenciales, cívicos y comerciales. Nuestra reputación se basa en nuestra capacidad para responder a las necesidades únicas de cada cliente, diseñando paisajes innovadores y conscientes del medio ambiente que perduran en el tiempo.</p>
-    <p>Además, destacamos en el diseño de paisajes sostenibles con plantas nativas de California, atrayendo aves, abejas y mariposas locales, y contribuyendo así a fortalecer el ecosistema de polinizadores de la región.</p>
-	    <button type="button" class="btn-next btn-start">Comenzar Solicitud</button>
-	  </div>
-	</div>
+      <!-- Step 0: Introduction -->
+      <div class="form-step active">
+        <div class="intro-step">
+          <h2>About KAA</h2>
+          <p>We are an award-winning landscape architecture firm with over 40 years of experience, proudly serving Northern California, USA. We specialize in creating authentic California gardens, offering comprehensive landscape design services for residential, civic, and commercial projects. Our reputation is built on our ability to respond to each client’s unique needs, crafting innovative, environmentally conscious landscapes that stand the test of time.</p>
+          <p>Additionally, we excel in designing sustainable landscapes featuring native California plants, attracting local birds, bees, and butterflies—helping to enhance the region’s pollinator ecosystem.</p>
+          <button type="button" class="btn-next btn-start">Start Application</button>
+        </div>
+      </div>
       
-      <!-- Paso 1: Datos Personales -->
+      <!-- Step 1: Personal Information -->
       <div class="form-step">
-        <h2>Datos Personales</h2>
-        <p>Por favor, completa tu información de contacto.</p>
+        <h2>Personal Information</h2>
+        <p>Please provide your contact details.</p>
         
-        <label for="nombre">Nombre Completo *</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required />
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required />
 
-        <label for="email">Correo Electrónico *</label>
-        <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required />
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
 
-        <label for="telefono">Número de Teléfono *</label>
-        <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu número de teléfono" required />
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
 
         <div class="btns-group">
-          <button type="button" class="btn-next">Siguiente</button>
+          <button type="button" class="btn-next">Next</button>
         </div>
       </div>
 
-      <!-- Paso 2: Experiencia Profesional -->
+      <!-- Step 2: Professional Experience -->
       <div class="form-step">
-        <h2>Experiencia Profesional</h2>
-        <p>Cuéntanos un poco sobre tu experiencia y tus habilidades.</p>
+        <h2>Professional Experience</h2>
+        <p>Tell us a little about your experience and skills.</p>
 
-        <label for="experiencia">Años de Experiencia *</label>
-        <input type="number" id="experiencia" name="experiencia" placeholder="Ej. 3" min="0" required />
+        <label for="experience">Years of Experience *</label>
+        <input type="number" id="experience" name="experience" placeholder="E.g. 3" min="0" required />
 
-        <label for="especializacion">Especialización *</label>
-        <select id="especializacion" name="especializacion" required>
-          <option value="" disabled selected>Selecciona tu especialización</option>
-          <option value="Residencial">Residencial</option>
-          <option value="Comercial">Comercial</option>
-          <option value="Cívico">Cívico</option>
-          <option value="Otro">Otro</option>
+        <label for="specialization">Specialization *</label>
+        <select id="specialization" name="specialization" required>
+          <option value="" disabled selected>Select your specialization</option>
+          <option value="Residential">Residential</option>
+          <option value="Commercial">Commercial</option>
+          <option value="Civic">Civic</option>
+          <option value="Other">Other</option>
         </select>
 
-        <label>Software que dominas (selección múltiple) *</label>
+        <label>Software Proficiency (Multiple Selection) *</label>
         <div class="checkbox-group">
           <label><input type="checkbox" name="software" value="SketchUp" /> SketchUp</label>
           <label><input type="checkbox" name="software" value="AutoCAD" /> AutoCAD</label>
@@ -89,65 +87,64 @@
           <label><input type="checkbox" name="software" value="Rhino 3D" /> Rhino 3D</label>
           <label><input type="checkbox" name="software" value="LayOut" /> LayOut</label>
         </div>
-	<label for="cv">Sube tu CV (PDF o DOCX) *</label>
-	<input type="file" id="cv" name="cv" accept=".pdf,.docx" required />
+
+        <label for="cv">Upload Your Resume (PDF or DOCX) *</label>
+        <input type="file" id="cv" name="cv" accept=".pdf,.docx" required />
 
         <div class="btns-group">
-          <button type="button" class="btn-prev">Anterior</button>
-          <button type="button" class="btn-next">Siguiente</button>
+          <button type="button" class="btn-prev">Previous</button>
+          <button type="button" class="btn-next">Next</button>
         </div>
       </div>
 
-      <!-- Paso 3: Motivación y Valores -->
+      <!-- Step 3: Motivation and Values -->
       <div class="form-step">
-        <h2>Motivación y Valores</h2>
-        <p>¿Qué te motiva a trabajar en KAA y qué esperas de nuestra empresa?</p>
+        <h2>Motivation and Values</h2>
+        <p>What motivates you to work at KAA, and what do you expect from our company?</p>
         
-        <label for="motivacion">Tu respuesta *</label>
-        <textarea id="motivacion" name="motivacion" rows="4" placeholder="Comparte tu motivación y expectativas" required></textarea>
+        <label for="motivation">Your Answer *</label>
+        <textarea id="motivation" name="motivation" rows="4" placeholder="Share your motivation and expectations" required></textarea>
 
         <div class="btns-group">
-          <button type="button" class="btn-prev">Anterior</button>
-          <button type="button" class="btn-next">Siguiente</button>
+          <button type="button" class="btn-prev">Previous</button>
+          <button type="button" class="btn-next">Next</button>
         </div>
       </div>
 
-      <!-- Paso 4: Referencias Laborales -->
+      <!-- Step 4: References -->
       <div class="form-step">
-        <h2>Referencias Laborales</h2>
-        <p>Proporciona nombres y contactos de referencias.</p>
+        <h2>Professional References</h2>
+        <p>Please provide names and contact information for references.</p>
 
-        <label for="referencias">Tus referencias *</label>
-        <textarea id="referencias" name="referencias" rows="3" placeholder="Agrega al menos dos referencias (Nombre y Teléfono)" required></textarea>
+        <label for="references">Your References *</label>
+        <textarea id="references" name="references" rows="3" placeholder="Add at least two references (Name and Phone)" required></textarea>
 
         <div class="btns-group">
-          <button type="button" class="btn-prev">Anterior</button>
-          <button type="button" class="btn-next">Siguiente</button>
+          <button type="button" class="btn-prev">Previous</button>
+          <button type="button" class="btn-next">Next</button>
         </div>
       </div>
 
-      <!-- Paso 5: Comentarios opcionales -->
+      <!-- Step 5: Additional Comments -->
       <div class="form-step">
-        <h2>Comentarios o Preguntas</h2>
-        <p>¿Te gustaría agregar algo más?</p>
+        <h2>Additional Comments</h2>
+        <p>Would you like to add anything else?</p>
 
-        <label for="comentarios">Comentarios (opcional)</label>
-        <textarea id="comentarios" name="comentarios" rows="3" placeholder="¿Alguna duda adicional?"></textarea>
+        <label for="comments">Comments (Optional)</label>
+        <textarea id="comments" name="comments" rows="3" placeholder="Any additional questions?"></textarea>
 
         <div class="btns-group">
-          <button type="button" class="btn-prev">Anterior</button>
-          <button type="submit" class="btn-submit">Enviar</button>
+          <button type="button" class="btn-prev">Previous</button>
+          <button type="submit" class="btn-submit">Submit</button>
         </div>
       </div>
     </form>
   </main>
 
-  <!-- Pie de página -->
   <footer class="footer">
     <p>&copy; 2025 Karen Aitken and Associates. All Rights Reserved.</p>
   </footer>
 
-  <!-- Script JavaScript para el formulario multistep -->
   <script src="script.js"></script>
 </body>
 </html>
